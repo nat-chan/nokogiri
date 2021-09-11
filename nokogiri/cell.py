@@ -37,4 +37,4 @@ if IS_JUPYTER:
             return C, D
         print(C, D)
 else:
-    cell = lambda: lambda func: func
+    cell = lambda *args, **kwargs: lambda func: func
