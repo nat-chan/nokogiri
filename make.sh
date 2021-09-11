@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# pip install wheel twine 
+# pip install wheel twine setuppy_generator
 set -eux
 
 a=$(grep -oP "(?<=version=')\d*" setup.py)
