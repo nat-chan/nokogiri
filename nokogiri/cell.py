@@ -1,11 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-try:
-    assert get_ipython().__class__.__name__ == 'ZMQInteractiveShell'
-    IS_JUPYTER = True
-except:
-    IS_JUPYTER = False
-if IS_JUPYTER:
+from nokogiri.which_env import which_env
+if which_env() == which_env.JUPYTER:
     import inspect
     import ast
     import _ast
