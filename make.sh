@@ -3,6 +3,8 @@
 # pip install wheel twine setuppy_generator
 set -eux
 
+python -m unittest discover
+
 a=$(grep -oP "(?<=version=')\d*" setup.py)
 b=$(grep -oP "(?<=version='\d.)\d*" setup.py)
 c=$(grep -oP "(?<=version='\d.\d.)\d*" setup.py)
