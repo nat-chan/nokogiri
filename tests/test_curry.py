@@ -21,6 +21,14 @@ class test_curry(unittest.TestCase):
         self.assertEqual("/A/0/False/None/e", F[0][False][None]("A"))
     def test_名前付き引数への部分適用を_でできる(self):
         self.assertEqual("/A/b/c/d/E", F._(e="E")("A"))
+    def test_パイプとしてつかえる(self):
+        @curry
+        def f(x):
+            return x+1
+        @curry
+        def g(x):
+            return 2*x
+        self.assertEqual([2,4,6,8,10], range(5)|f|g)
 
 if __name__ == '__main__':
     unittest.main()

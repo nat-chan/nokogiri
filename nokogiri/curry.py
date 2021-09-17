@@ -17,6 +17,8 @@ class curry:
             *(*args, *_args), # 実際に呼ばれる時の引数は前にくる
             **{**_kwargs, **kwargs},
         )
+    def __ror__(self, other):
+        return list(map(self, other))
     def __str__(self):
         _func, _args, _kwargs = self.__fields__
         parameters = ', '.join(
