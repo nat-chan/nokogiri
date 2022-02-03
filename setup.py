@@ -6,7 +6,7 @@ except ImportError:
 
 setup(
     name='nokogiri',
-    version='0.1.10',
+    version='0.1.13',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
     packages=[
