@@ -6,7 +6,7 @@ except ImportError:
 
 setup(
     name='nokogiri',
-    version='0.1.14',
+    version='0.1.15',
     url='https://github.com/nat-chan/nokogiri',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
