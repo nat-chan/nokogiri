@@ -85,11 +85,10 @@ f._(key="value") == lambda x: f(x, key="value")
 Detect notebook environment is Jupyter or Terminal or …
 ```python
 from nokogiri.which_env import which_env
-envname = which_env()
-if envname == which_env.JUPYTER:
-    from tqdm import tqdm
-elif envname == which_env.IPYTHON:
+if which_env() == which_env.JUPYTER:
     from tqdm.notebook import tqdm
+else:
+    from tqdm import tqdm
 ```
 
 ## [shared_map](https://github.com/nat-chan/nokogiri/blob/main/nokogiri/shared_map.py)
