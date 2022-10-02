@@ -29,6 +29,32 @@ from nokogiri.spylus import spylus
 
 --- 
 
+## [anyparse](https://github.com/nat-chan/nokogiri/blob/main/nokogiri/anyparse.py)
+Drop-in replacement library for (config)argparse that works anywhere (Jupyter Notebook, JupyterLab, VSCode Python Interactive).
+Have you ever met an annying error message like this?
+```
+usage: ipykernel_launcher.py [-h]
+ipykernel_launcher.py: error: unrecognized arguments: -f 
+…
+An exception has occurred, use %tb to see the full traceback.
+SystemExit: 2
+```
+
+As shown in the following example. 
+You can drop-in replace argparse with anyparse.
+You can also specify commands to be parsed only on jupyter.
+
+```
+from nokogiri import anyparse as argparse # Drop-in replacement
+parser = argparse.ArgumentParser()
+parser.add_argument('--readlink', type=str, default="")
+parser.add_argument('--metrics', type=bool, default=False)
+parser.jupyter_argument("--metrics True") # This command is parsed only on jupyter.
+args = parser.parse_args()
+```
+
+[If configargparse is already installed, all features are available!](https://github.com/bw2/ConfigArgParse)
+
 ## [working_dir](https://github.com/nat-chan/nokogiri/blob/main/nokogiri/working_dir.py)
 Enables import of any module not in the project tree from anywhere at any time
 ```python
